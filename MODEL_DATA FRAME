@@ -1,0 +1,16 @@
+CREATE TABLE tblEmployee_2(ID INT NOT NULL,
+                           FirstName VARCHAR(250),
+						   MiddleName VARCHAR(250),
+						   LastName VARCHAR(250));
+
+
+INSERT INTO tblEmployee_2 (ID,FirstName) VALUES(1,'Sam');
+INSERT INTO tblEmployee_2 (ID,MiddleName,LastName) VALUES(2,'Todd','Tanzan');
+INSERT INTO tblEmployee_2 (ID,LastName) VALUES(3,'Sara');
+INSERT INTO tblEmployee_2 (ID,FirstName,MiddleName) VALUES(4,'Ben','Parker');
+INSERT INTO tblEmployee_2 (ID,FirstName,MiddleName,LastName) VALUES(5,'James','Nick','Nancy');
+
+SELECT * FROM tblEmployee_2;
+
+SELECT ID, COALESCE(FirstName,MiddleName,LastName) AS Name
+FROM tblEmployee_2;
